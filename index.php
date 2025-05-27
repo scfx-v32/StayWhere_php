@@ -42,7 +42,7 @@ ob_end_flush();
       <input type="text" name="location" class="flex-1 p-3 border border-gray-300 rounded-xl" placeholder="Destination">
       <input type="date" name="check_in" class="p-3 border border-gray-300 rounded-xl" placeholder="Check-in">
       <input type="date" name="check_out" class="p-3 border border-gray-300 rounded-xl" placeholder="Check-out">
-      <input type="number" name="guests" class="p-3 border border-gray-300 rounded-xl" placeholder="Guests" min="1" max="<?= max(array_column($stays, 'max_guests')) ?>">
+      <input type="number" name="guests" class="p-3 border border-gray-300 rounded-xl" placeholder="Guests" min="1">
       <button type="submit" class="bg-orange-500 text-white px-6 py-3 rounded-xl hover:bg-orange-600 transition">Search</button>
     </form>
   </div>

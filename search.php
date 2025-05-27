@@ -56,8 +56,8 @@ $stays = $stmt->fetchAll(PDO::FETCH_ASSOC);
             class="p-3 border border-gray-300 rounded-xl">
         <input type="date" name="check_out" value="<?= htmlspecialchars($check_out) ?>"
             class="p-3 border border-gray-300 rounded-xl">
-        <input type="number" min="1" name="guests" placeholder="Guests" value="<?= htmlspecialchars($guests) ?>"
-            class="p-3 border border-gray-300 rounded-xl" max="<?= max(array_column($stays, 'max_guests')) ?>">
+        <input type="number" min="1" name="guests" placeholder="Guests" value="<?= htmlspecialchars($guests) ?>" mi="1"
+            class="p-3 border border-gray-300 rounded-xl">
         <button type="submit"
             class="bg-orange-500 text-white px-6 py-3 rounded-xl hover:bg-orange-600 transition">Search</button>
     </form>
@@ -67,10 +67,11 @@ $stays = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <h2 class="text-3xl font-bold text-center mb-8">Search Results</h2>
         <?php if (empty($stays)): ?>
             <div class="text-center text-gray-600">No stays found for your search.</div>
+            <br><br><br><br><br>
         <?php else: ?>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <?php foreach ($stays as $stay): ?>
-                    <a href="staydetails.php?id=<?= $stay['id'] ?>" class="bg-white rounded-xl shadow-lg overflow-hidden block hover:shadow-xl transition">
+                    <a href="staydetails.php?id=<?= $stay['id'] ?>&check_in=<?= urlencode($check_in) ?>&check_out=<?= urlencode($check_out) ?>" class="bg-white rounded-xl shadow-lg overflow-hidden block hover:shadow-xl transition">
                         <img src="<?= $stay['image_url'] ? $stay['image_url'] : 'https://placehold.co/400x300' . $stay['id'] ?>"
                             alt="<?= htmlspecialchars($stay['title']) ?>"
                             class="w-full h-48 object-cover">
