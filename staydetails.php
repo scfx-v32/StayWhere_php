@@ -9,6 +9,8 @@ $user_id = $_SESSION['user']['id'] ?? null;
 
 // Get stay id from query string or default to 1
 $stay_id = isset($_GET['id']) ? intval($_GET['id']) : 1;
+$check_in_prefill = $_GET['check_in'] ?? '';
+$check_out_prefill = $_GET['check_out'] ?? '';
 
 
 
@@ -370,12 +372,12 @@ if ($user_id) {
             <!-- Check-in Date -->
             <div class="mb-4">
               <label for="checkIn" class="block text-gray-700">Check-in Date</label>
-              <input type="date" id="checkIn" name="checkIn" class="w-full p-2 border border-gray-300 rounded-lg" required>
+              <input type="date" id="checkIn" name="checkIn" class="w-full p-2 border border-gray-300 rounded-lg" required value="<?= htmlspecialchars($check_in_prefill) ?>">
             </div>
             <!-- Check-out Date -->
             <div class="mb-4">
               <label for="checkOut" class="block text-gray-700">Check-out Date</label>
-              <input type="date" id="checkOut" name="checkOut" class="w-full p-2 border border-gray-300 rounded-lg" required>
+              <input type="date" id="checkOut" name="checkOut" class="w-full p-2 border border-gray-300 rounded-lg" required value="<?= htmlspecialchars($check_out_prefill) ?>">
             </div>
             <!-- Price Calculation -->
             <div class="mb-4">
@@ -419,8 +421,6 @@ if ($user_id) {
     </div>
   </div>
 
-  <!-- Include Footer -->
-  <div id="footer"></div>
 
   <?php include "headers/footer.php"; ?>
   <!-- JavaScript for Modal and Price Calculation -->
@@ -523,6 +523,7 @@ if ($user_id) {
           return false;
         <?php endif; ?>
       });
+      calculateTotal();
     });
   </script>
 </body>
