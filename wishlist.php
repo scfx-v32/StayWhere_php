@@ -41,6 +41,7 @@ try {
 
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Wishlist | StayWhere</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -91,7 +92,7 @@ try {
         <?php endif; ?>
     </div>
 
-    <!-- In wishlist.php, replace the existing script with this jQuery version -->
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {

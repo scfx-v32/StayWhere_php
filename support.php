@@ -16,6 +16,7 @@ $current_user_id = $_SESSION['user']['id'] ?? null;
 
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <title>Contact Support | StayWhere</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>

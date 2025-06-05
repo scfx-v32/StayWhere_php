@@ -54,6 +54,7 @@ include_once 'headers/header.php';
 
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <title>My Stays | StayWhere</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>

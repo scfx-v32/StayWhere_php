@@ -61,6 +61,7 @@ ob_end_flush();
 
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <title>My Reservations | StayWhere</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>

@@ -13,11 +13,14 @@ $name = htmlspecialchars($_SESSION['user']['name']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <title>Host Dashboard | StayWhere</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-gray-50 min-h-screen">
     <div class="container mx-auto px-4 py-12">
         <div class="mb-10 text-center">
@@ -50,4 +53,5 @@ $name = htmlspecialchars($_SESSION['user']['name']);
     </div>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </body>
+
 </html>
