@@ -14,7 +14,7 @@ if (isset($_SESSION['user']['id'])) {
 }
 ?>
 
-<header class="bg-white shadow">
+<header class="bg-white shadow sticky top-0 z-50">
   <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
     <!-- Logo -->
     <?php
