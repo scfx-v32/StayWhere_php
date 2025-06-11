@@ -1,6 +1,8 @@
 <?php
 ob_start();
 require 'config.php';
+// Start session
+session_start();
 
 // Fetch stays from database with their first image
 $stmt = $pdo->query("
