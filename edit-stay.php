@@ -149,7 +149,6 @@ if (isset($_GET['delete_image']) && is_numeric($_GET['delete_image'])) {
 }
 
 
-include_once 'headers/header.php';
 
 ?>
 <!DOCTYPE html>
@@ -164,6 +163,9 @@ include_once 'headers/header.php';
 </head>
 
 <body class="bg-gray-50 min-h-screen">
+    
+    <?php include_once 'headers/header.php'; ?>
+
     <div class="container mx-auto px-4 py-10 max-w-6xl">
         <h1 class="text-3xl font-bold mb-6">Edit Stay</h1>
         <?php if ($errors): ?>

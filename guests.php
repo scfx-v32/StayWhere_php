@@ -2,7 +2,6 @@
 ob_start();
 session_start();
 require_once 'config.php';
-include_once 'headers/header.php';
 
 // Only admin can access
 if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
@@ -33,6 +32,9 @@ $guests = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-50 min-h-screen">
+
+    <?php include_once 'headers/header.php'; ?>
+
     <div class="container mx-auto px-4 py-10">
         <h1 class="text-3xl font-bold mb-8">Guest Users</h1>
         <div class="overflow-x-auto">

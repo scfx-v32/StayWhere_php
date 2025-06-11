@@ -8,9 +8,6 @@ if (!isset($_SESSION['user']['id'])) {
     exit();
 }
 
-// Include header after session check
-include_once 'headers/header.php';
-
 try {
     // Get user's wishlist stays
     $stmt = $pdo->prepare("
@@ -49,6 +46,9 @@ try {
 </head>
 
 <body>
+
+    <?php include_once 'headers/header.php'; ?>
+
     <div class="container mx-auto px-4 py-8">
         <h1 class="text-3xl font-bold mb-8">Your Wishlist</h1>
 

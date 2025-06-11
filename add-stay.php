@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once 'config.php';
-include_once 'headers/header.php';
 
 // Only hosts can access
 if (empty($_SESSION['user']) || $_SESSION['user']['role'] !== 'host') {
@@ -103,6 +102,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 
 <body class="bg-gray-50 min-h-screen">
+    <?php include_once 'headers/header.php'; ?>
     <div class="container mx-auto px-4 py-10 max-w-6xl"> <!-- Changed max-w-3xl to max-w-6xl for wider layout -->
         <h1 class="text-3xl font-bold mb-6">Add a New Stay</h1>
         <?php if ($errors): ?>

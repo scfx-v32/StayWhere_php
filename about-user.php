@@ -33,8 +33,6 @@ if ($is_host) {
 
 
 
-include_once 'headers/header.php';
-
 ?>
 
 <!DOCTYPE html>
@@ -56,6 +54,7 @@ include_once 'headers/header.php';
 </head>
 
 <body class="bg-gray-100 min-h-screen">
+  <?php include_once 'headers/header.php'; ?>
   <div class="container mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
 
     <!-- Profile Card -->

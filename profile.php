@@ -11,7 +11,7 @@ if (empty($_SESSION['user']) || !isset($_SESSION['user']['id'])) {
 }
 
 require_once 'config.php';
-include_once 'headers/header.php';
+
 
 // Get user data
 $stmt = $pdo->prepare("SELECT * FROM users WHERE id = ?");
@@ -153,6 +153,7 @@ ob_end_flush();
 
 <body>
 
+    <?php include_once 'headers/header.php'; ?>
 
     <!-- Profile Section -->
     <div class="container mx-auto px-6 py-12">

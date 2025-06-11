@@ -2,7 +2,6 @@
 ob_start();
 session_start();
 require_once 'config.php';
-include_once 'headers/header.php';
 
 
 $user_id = $_SESSION['user']['id'] ?? null;
@@ -67,6 +66,9 @@ ob_end_flush();
 </head>
 
 <body class="bg-gray-50">
+
+    <?php include_once 'headers/header.php'; ?>
+
     <div class="container mx-auto px-4 py-8">
         <h1 class="text-3xl font-bold mb-8">My Reservations</h1>
         <?php if (empty($reservations)): ?>

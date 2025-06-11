@@ -64,7 +64,7 @@ $stmt = $pdo->prepare("
 $stmt->execute([$user_id]);
 $reservations = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-include_once 'headers/header.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -77,6 +77,9 @@ include_once 'headers/header.php';
 </head>
 
 <body class="bg-gray-50 min-h-screen">
+
+    <?php include_once 'headers/header.php'; ?>
+
     <div class="container mx-auto px-4 py-10">
         <h1 class="text-3xl font-bold mb-8">Reservation Requests</h1>
         <?php if (empty($reservations)): ?>

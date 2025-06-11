@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once 'config.php';
-include 'headers/header.php';
 
 // --- User authentication (replace with your own logic) ---
 
@@ -215,8 +214,9 @@ if ($user_id) {
 </head>
 
 <body>
-  <!-- Include Header -->
-  <div id="header"></div>
+
+  <?php include_once 'headers/header.php'; ?>
+
   <div class="flex">
     <!-- Left Side (75% width) -->
     <div class="w-3/4 ml-8">

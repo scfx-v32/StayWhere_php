@@ -60,6 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 <body class="bg-gray-100 py-10">
 
+
     <div class="max-w-2xl mx-auto flex flex-col items-center">
         <!-- Logo -->
         <a href="index.php" class="mb-8">

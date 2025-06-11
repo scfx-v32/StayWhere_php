@@ -52,7 +52,7 @@
   
       <!-- Copyright -->
       <div class="border-t border-orange-700 mt-8 pt-8 text-center text-white-400">
-        <p>&copy; 2025 StayWhere. All rights reserved. Developed by <a href="https://github.com/scfx-v32">@scfx-v32</a></p>
+        <p>&copy; 2025 StayWhere. All rights reserved. Developed by <a href="https://github.com/scfx-v32" class="text-orange-200 hover:underline">@scfx-v32</a></p>
       </div>
     </div>
   </footer>

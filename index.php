@@ -1,7 +1,6 @@
 <?php
 ob_start();
 require 'config.php';
-include 'headers/header.php';
 
 // Fetch stays from database with their first image
 $stmt = $pdo->query("
@@ -30,7 +29,9 @@ ob_end_flush();
 </head>
 
 <body>
-  
+
+  <?php include_once 'headers/header.php'; ?>
+
 
   <!-- Hero Section -->
   <div class="container mx-auto px-6 py-12">
@@ -53,17 +54,17 @@ ob_end_flush();
     <h2 class="text-3xl font-bold text-center mb-8">Featured Stays</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       <?php foreach ($stays as $stay): ?>
-      <a href="staydetails.php?id=<?= $stay['id'] ?>" class="bg-white rounded-xl shadow-lg overflow-hidden block hover:shadow-xl transition">
-        <img src="<?= $stay['image_url'] ? $stay['image_url'] : 'https://placehold.co/400x300'.$stay['id'] ?>" 
-             alt="<?= htmlspecialchars($stay['title']) ?>" 
-             class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h3 class="text-xl font-semibold"><?= htmlspecialchars($stay['title']) ?></h3>
-          <p class="text-gray-600"><?= htmlspecialchars($stay['location']) ?></p>
-          <p class="text-gray-700 font-bold">$<?= number_format($stay['price_per_night'], 2) ?>/night</p>
-          <p class="text-sm text-gray-500">Max guests: <?= $stay['max_guests'] ?></p>
-        </div>
-      </a>
+        <a href="staydetails.php?id=<?= $stay['id'] ?>" class="bg-white rounded-xl shadow-lg overflow-hidden block hover:shadow-xl transition">
+          <img src="<?= $stay['image_url'] ? $stay['image_url'] : 'https://placehold.co/400x300' . $stay['id'] ?>"
+            alt="<?= htmlspecialchars($stay['title']) ?>"
+            class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h3 class="text-xl font-semibold"><?= htmlspecialchars($stay['title']) ?></h3>
+            <p class="text-gray-600"><?= htmlspecialchars($stay['location']) ?></p>
+            <p class="text-gray-700 font-bold">$<?= number_format($stay['price_per_night'], 2) ?>/night</p>
+            <p class="text-sm text-gray-500">Max guests: <?= $stay['max_guests'] ?></p>
+          </div>
+        </a>
       <?php endforeach; ?>
     </div>
   </div>
@@ -72,20 +73,21 @@ ob_end_flush();
   <?php include 'headers/footer.php'; ?>
 
   <script>
-  $(document).ready(function() {
-    // Load header and footer
-    $("#header").load("header.php");
-    $("#footer").load("footer.php");
-    
-    // Set default dates for search form
-    const today = new Date().toISOString().split('T')[0];
-    const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    const tomorrowStr = tomorrow.toISOString().split('T')[0];
-    
-    $('input[name="check_in"]').val(today);
-    $('input[name="check_out"]').val(tomorrowStr);
-  });
+    $(document).ready(function() {
+      // Load header and footer
+      $("#header").load("header.php");
+      $("#footer").load("footer.php");
+
+      // Set default dates for search form
+      const today = new Date().toISOString().split('T')[0];
+      const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      const tomorrowStr = tomorrow.toISOString().split('T')[0];
+
+      $('input[name="check_in"]').val(today);
+      $('input[name="check_out"]').val(tomorrowStr);
+    });
   </script>
 </body>
+
 </html>

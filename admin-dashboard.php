@@ -1,7 +1,6 @@
 <?php
 session_start();
 require_once 'config.php';
-include_once 'headers/header.php';
 
 // Redirect if not logged in or not admin
 if (empty($_SESSION['user']) || $_SESSION['user']['role'] !== 'admin') {
@@ -22,6 +21,7 @@ $name = htmlspecialchars($_SESSION['user']['name']);
 </head>
 
 <body class="bg-gray-50 min-h-screen">
+    <?php include_once 'headers/header.php'; ?>
     <div class="container mx-auto px-4 py-12">
         <div class="mb-10 text-center">
             <h1 class="text-3xl font-bold mb-2">Welcome <?= $name ?></h1>

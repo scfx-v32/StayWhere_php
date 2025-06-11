@@ -1,7 +1,6 @@
 <?php
 
 require 'config.php';
-include 'headers/header.php';
 
 // Get search parameters
 $location = $_GET['location'] ?? '';
@@ -48,21 +47,24 @@ $stays = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 
 <body>
-<!-- search inputs -->
-<div class="container mx-auto px-6 py-12">
-    <form method="get" action="search.php" class="bg-white p-6 rounded-xl shadow-lg flex flex-col md:flex-row gap-4">
-        <input type="text" name="location" placeholder="Destination" value="<?= htmlspecialchars($location) ?>"
-            class="flex-1 p-3 border border-gray-300 rounded-xl">
-        <input type="date" name="check_in" value="<?= htmlspecialchars($check_in) ?>"
-            class="p-3 border border-gray-300 rounded-xl">
-        <input type="date" name="check_out" value="<?= htmlspecialchars($check_out) ?>"
-            class="p-3 border border-gray-300 rounded-xl">
-        <input type="number" min="1" name="guests" placeholder="Guests" value="<?= htmlspecialchars($guests) ?>" mi="1"
-            class="p-3 border border-gray-300 rounded-xl">
-        <button type="submit"
-            class="bg-orange-500 text-white px-6 py-3 rounded-xl hover:bg-orange-600 transition">Search</button>
-    </form>
-</div>
+
+    <?php include_once 'headers/header.php'; ?>
+
+    <!-- search inputs -->
+    <div class="container mx-auto px-6 py-12">
+        <form method="get" action="search.php" class="bg-white p-6 rounded-xl shadow-lg flex flex-col md:flex-row gap-4">
+            <input type="text" name="location" placeholder="Destination" value="<?= htmlspecialchars($location) ?>"
+                class="flex-1 p-3 border border-gray-300 rounded-xl">
+            <input type="date" name="check_in" value="<?= htmlspecialchars($check_in) ?>"
+                class="p-3 border border-gray-300 rounded-xl">
+            <input type="date" name="check_out" value="<?= htmlspecialchars($check_out) ?>"
+                class="p-3 border border-gray-300 rounded-xl">
+            <input type="number" min="1" name="guests" placeholder="Guests" value="<?= htmlspecialchars($guests) ?>" mi="1"
+                class="p-3 border border-gray-300 rounded-xl">
+            <button type="submit"
+                class="bg-orange-500 text-white px-6 py-3 rounded-xl hover:bg-orange-600 transition">Search</button>
+        </form>
+    </div>
 
     <div class="container mx-auto px-6 py-12">
         <h2 class="text-3xl font-bold text-center mb-8">Search Results</h2>

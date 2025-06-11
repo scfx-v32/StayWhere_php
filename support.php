@@ -2,7 +2,6 @@
 
 session_start();
 require_once 'config.php';
-include_once 'headers/header.php';
 
 // Fetch all admins
 $stmt = $pdo->query("SELECT id, name, email, telephone FROM users WHERE role = 'admin' ORDER BY name ASC");
@@ -22,6 +21,9 @@ $current_user_id = $_SESSION['user']['id'] ?? null;
 </head>
 
 <body class="bg-gray-50 min-h-screen">
+
+    <?php include_once 'headers/header.php'; ?>
+
     <div class="container mx-auto px-4 py-10">
         <h1 class="text-3xl font-bold mb-8">Need support?</h1>
         <h2 class="text-xxl font-bold mb-8">Contact the Admins.</h2>
